@@ -55,16 +55,9 @@
     <ClCompile Include="j1Image.cpp">
       <Filter>Desenvolupament  ========\Modules\UIElements</Filter>
     </ClCompile>
-    <ClCompile Include="j1InputText.cpp">
-      <Filter>Desenvolupament  ========\Modules\UIElements</Filter>
-    </ClCompile>
     <ClCompile Include="j1Label.cpp">
       <Filter>Desenvolupament  ========\Modules\UIElements</Filter>
     </ClCompile>
-    <ClCompile Include="j1CheckBox.cpp">
-      <Filter>Desenvolupament  ========\Modules\UIElements</Filter>
-    </ClCompile>
-    <ClCompile Include="j1ElementGUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="j1Window.h">
@@ -139,13 +132,7 @@
     <ClInclude Include="j1Image.h">
       <Filter>Desenvolupament  ========\Modules\UIElements</Filter>
     </ClInclude>
-    <ClInclude Include="j1InputText.h">
-      <Filter>Desenvolupament  ========\Modules\UIElements</Filter>
-    </ClInclude>
     <ClInclude Include="j1Label.h">
-      <Filter>Desenvolupament  ========\Modules\UIElements</Filter>
-    </ClInclude>
-    <ClInclude Include="j1CheckBox.h">
       <Filter>Desenvolupament  ========\Modules\UIElements</Filter>
     </ClInclude>
     <ClInclude Include="j1ElementGUI.h">

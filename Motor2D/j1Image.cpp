@@ -5,19 +5,15 @@
 #include "j1Gui.h"
 #include "p2Log.h"
 
-#include "SDL/include/SDL.h"
-
-j1Image::j1Image() : j1ElementGUI()
+j1Image::j1Image(fPoint position,SDL_Rect* rect, ElementUIType type, SDL_Texture* graphics, j1ElementGUI* parent) :
+	rect(rect),
+	j1ElementGUI(position, type, graphics, parent)
 {
 	graphics = (SDL_Texture*)App->gui->GetAtlas();
 }
 
 
-j1Image::~j1Image()
-{
-	delete rect;
-	rect = nullptr;
-}
+j1Image::~j1Image(){}
 
 void j1Image::Draw()
 {

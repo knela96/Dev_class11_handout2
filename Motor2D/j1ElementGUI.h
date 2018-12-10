@@ -18,7 +18,7 @@ class j1ElementGUI
 {
 public:
 
-	j1ElementGUI() {}
+	j1ElementGUI(fPoint position, ElementUIType type, SDL_Texture* graphics, j1ElementGUI* parent) : position(position), type(type), graphics(graphics), parent(parent){}
 
 	// Destructor
 	virtual ~j1ElementGUI() {}
@@ -38,16 +38,15 @@ public:
 
 	virtual void Draw() {}
 
-	virtual void OnClick() {}
-
 	virtual void setPosition() {}
 
 public:
-	p2SString name;
-	p2SString folder;
+	p2SString name;//delete?
+	p2SString folder;//delete?
 	fPoint position;
 	ElementUIType type;
 	SDL_Texture* graphics;
+	j1ElementGUI* parent;
 };
 
 #endif

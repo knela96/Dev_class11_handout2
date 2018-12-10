@@ -5,17 +5,17 @@
 #include "p2Log.h"
 
 
-j1Label::j1Label(p2SString text)
+j1Label::j1Label(fPoint position, p2SString text, ElementUIType type, SDL_Texture* graphics, j1ElementGUI* parent) :
+	text(text),
+	j1ElementGUI(position,type,graphics,parent)
 {
-	this->text = text;
-	graphics = App->font->Print(text.GetString());
+	this->graphics = App->font->Print(text.GetString());
 	App->font->CalcSize(text.GetString(), width, height);
 }
 
 
 j1Label::~j1Label()
-{
-}
+{}
 
 void j1Label::Draw()
 {

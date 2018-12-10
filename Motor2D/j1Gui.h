@@ -1,6 +1,5 @@
 #ifndef __j1GUI_H__
 #define __j1GUI_H__
-
 #include "j1Module.h"
 #include "p2List.h"
 
@@ -10,6 +9,7 @@
 class j1ElementGUI;
 
 struct SDL_Texture;
+struct SDL_Rect;
 // ---------------------------------------------------
 class j1Gui : public j1Module
 {
@@ -39,9 +39,11 @@ public:
 	// Gui creation functions
 	const SDL_Texture* GetAtlas() const;
 
-	void AddImage();
+	void AddImage(fPoint pos, SDL_Rect* rect);
 
-	void AddLabel();
+	void AddLabel(fPoint pos,p2SString text);
+
+	void AddButton(fPoint pos, p2SString text, SDL_Rect * rect, SDL_Rect* anim);//Change to Animation
 
 public:
 	p2List<j1ElementGUI*> elements;
