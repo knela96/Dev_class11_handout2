@@ -5,7 +5,7 @@
 #include "p2Log.h"
 
 
-j1Label::j1Label(fPoint position, p2SString text, ElementUIType type, SDL_Texture* graphics, j1ElementGUI* parent) :
+j1Label::j1Label(fPoint position, p2SString text, SDL_Texture* graphics, j1ElementGUI* parent, ElementUIType type) :
 	text(text),
 	j1ElementGUI(position,type,graphics,parent)
 {
@@ -19,7 +19,8 @@ j1Label::~j1Label()
 
 void j1Label::Draw()
 {
-	App->render->Blit(graphics, position.x, position.y, nullptr, 0.0f);
-	LOG("LABEL: %f, %f", position.x, position.y);
+	fPoint parent_pos = getParentPos(this);
+	App->render->Blit(graphics,parent_pos.x + position.x, parent_pos.y + position.y, nullptr, 0.0f);
+	LOG("LABEL: %f, %f", parent_pos.x + position.x, parent_pos.y + position.y);
 }
 

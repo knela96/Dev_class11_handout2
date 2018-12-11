@@ -5,7 +5,7 @@
 class j1Label : public j1ElementGUI
 {
 public:
-	j1Label(fPoint position, p2SString text, ElementUIType type = ElementUIType::LABEL, SDL_Texture* graphics = nullptr, j1ElementGUI* parent = nullptr);
+	j1Label(fPoint position, p2SString text, SDL_Texture* graphics = nullptr, j1ElementGUI* parent = nullptr, ElementUIType type = ElementUIType::LABEL);
 	~j1Label();
 
 	void Draw();

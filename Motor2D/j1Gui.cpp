@@ -35,14 +35,12 @@ bool j1Gui::Awake(pugi::xml_node& conf)
 bool j1Gui::Start()
 {
 	atlas = App->tex->Load(atlas_file_name.GetString());
-	/*
-	SDL_Rect* rect = new SDL_Rect({ 485,829,328,103 });
-	fPoint pos = { (float)(App->render->camera.w / 2 - rect->w / 2), 50.0f };
+	
+	SDL_Rect* rect = new SDL_Rect({ 0, 0,328,103 });
+	fPoint pos = { 200.0f, 50.0f };
 	AddImage(pos,rect); 
 	SDL_Rect* anim = new SDL_Rect({ 0,0,400,103 });
-	AddButton(pos, "BUTTON", rect, anim);*/
-	fPoint pos1 = { 200.0f,0 };
-	AddLabel(pos1,"HOLA");
+	AddButton(pos, "BUTTON", rect, anim);
 	
 
 	return true;
@@ -83,7 +81,7 @@ const SDL_Texture* j1Gui::GetAtlas() const
 
 void j1Gui::AddImage(fPoint pos, SDL_Rect* rect)
 {
-	j1Image* image = new j1Image(pos,rect);
+	j1Image* image = new j1Image(pos,rect, (SDL_Texture*)GetAtlas());
 
 	j1ElementGUI* element = image;
 	elements.add(element);
@@ -99,7 +97,7 @@ void j1Gui::AddLabel(fPoint pos, p2SString text)
 }
 
 void j1Gui::AddButton(fPoint pos, p2SString text, SDL_Rect* rect, SDL_Rect* anim) {
-	j1Button* button = new j1Button(pos, text, rect, anim);
+	j1Button* button = new j1Button(pos, text, rect, anim, (SDL_Texture*)GetAtlas());
 
 	j1ElementGUI* element = button;
 	elements.add(element);

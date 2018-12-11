@@ -40,6 +40,16 @@ public:
 
 	virtual void setPosition() {}
 
+	fPoint getParentPos(j1ElementGUI* element) {
+		j1ElementGUI* c_parent = element->parent;
+		fPoint parent_pos = { 0,0 };
+		while (c_parent != nullptr) {
+			parent_pos += parent->position;
+			c_parent = c_parent->parent;
+		}
+		return parent_pos;
+	}
+
 public:
 	p2SString name;//delete?
 	p2SString folder;//delete?
@@ -47,6 +57,7 @@ public:
 	ElementUIType type;
 	SDL_Texture* graphics;
 	j1ElementGUI* parent;
+	void(*action)();
 };
 
 #endif

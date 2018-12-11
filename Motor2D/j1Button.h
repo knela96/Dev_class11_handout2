@@ -23,6 +23,7 @@ public:
 
 	void onHover();
 	void onClick();
+	void onAction();
 
 public:
 	bool clicked = false;

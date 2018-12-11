@@ -5,12 +5,9 @@
 #include "j1Gui.h"
 #include "p2Log.h"
 
-j1Image::j1Image(fPoint position,SDL_Rect* rect, ElementUIType type, SDL_Texture* graphics, j1ElementGUI* parent) :
+j1Image::j1Image(fPoint position, SDL_Rect* rect, SDL_Texture* graphics, j1ElementGUI* parent, ElementUIType type) :
 	rect(rect),
-	j1ElementGUI(position, type, graphics, parent)
-{
-	graphics = (SDL_Texture*)App->gui->GetAtlas();
-}
+	j1ElementGUI(position, type, graphics, parent) {}
 
 
 j1Image::~j1Image(){}
