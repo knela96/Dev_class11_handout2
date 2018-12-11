@@ -29,6 +29,8 @@ public:
 	// Called before all Updates
 	bool PreUpdate();
 
+	bool Update(float dt);
+
 	// Called after all Updates
 	bool PostUpdate();
 
@@ -43,7 +45,9 @@ public:
 
 	void AddLabel(fPoint pos,p2SString text);
 
-	void AddButton(fPoint pos, p2SString text, SDL_Rect * rect, SDL_Rect* anim);//Change to Animation
+	void AddButton(fPoint pos, p2SString text, SDL_Rect* rect, SDL_Rect* anim, void(*action)(void));
+
+	//Change to Animation
 
 public:
 	p2List<j1ElementGUI*> elements;

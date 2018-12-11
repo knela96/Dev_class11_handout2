@@ -14,7 +14,7 @@ struct SDL_Rect;
 class j1Button : public j1ElementGUI
 {
 public:
-	j1Button(fPoint pos, p2SString text, SDL_Rect* rect, SDL_Rect* anim, SDL_Texture* graphics = nullptr, j1ElementGUI* parent = nullptr, ElementUIType type = ElementUIType::BUTTON);
+	j1Button(fPoint pos, p2SString text, SDL_Rect* rect, SDL_Rect* anim, void(*action)(void), SDL_Texture* graphics = nullptr, j1ElementGUI* parent = nullptr, ElementUIType type = ElementUIType::BUTTON);
 	~j1Button();
 
 	bool Update();
@@ -31,5 +31,6 @@ public:
 	SDL_Rect* rect;
 	SDL_Rect* anim;
 	j1ElementGUI* parent;
+	void(*action)(void);
 };
 

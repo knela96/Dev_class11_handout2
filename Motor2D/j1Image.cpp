@@ -15,5 +15,5 @@ j1Image::~j1Image(){}
 void j1Image::Draw()
 {
 	App->render->Blit(graphics, position.x, position.y, rect, 0.0f);
-	LOG("IMAGE: %f, %f", position.x, position.y);
+	//LOG("IMAGE: %f, %f", position.x, position.y);
 }

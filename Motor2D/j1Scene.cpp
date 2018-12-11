@@ -45,15 +45,9 @@ bool j1Scene::Start()
 	}
 
 	debug_tex = App->tex->Load("maps/path2.png");
-	App->gui->elements.At(0)->data->action = &fun;
 	// TODO 3: Create the banner (rect {485, 829, 328, 103}) and the text "Hello World"
 
 	return true;
-}
-
-void fun()
-{
-	printf("Value of aaaaaa");
 }
 
 // Called each loop iteration

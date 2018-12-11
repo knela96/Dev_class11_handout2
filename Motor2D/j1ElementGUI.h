@@ -57,7 +57,7 @@ public:
 	ElementUIType type;
 	SDL_Texture* graphics;
 	j1ElementGUI* parent;
-	void(*action)();
+	p2List<j1ElementGUI*> childs;
 };
 
 #endif

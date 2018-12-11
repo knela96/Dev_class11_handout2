@@ -11,6 +11,12 @@
 #include "j1Label.h"
 #include "j1Button.h"
 
+
+void action()
+{
+	LOG("Value of aaaaaa");
+}
+
 j1Gui::j1Gui() : j1Module()
 {
 	name.create("gui");
@@ -40,7 +46,7 @@ bool j1Gui::Start()
 	fPoint pos = { 200.0f, 50.0f };
 	AddImage(pos,rect); 
 	SDL_Rect* anim = new SDL_Rect({ 0,0,400,103 });
-	AddButton(pos, "BUTTON", rect, anim);
+	AddButton(pos, "BUTTON", rect, anim, &action);
 	
 
 	return true;
@@ -52,17 +58,27 @@ bool j1Gui::PreUpdate()
 	return true;
 }
 
+bool j1Gui::Update(float dt) {
+
+	bool ret = true;
+	p2List_item<j1ElementGUI*>* item;
+	for (item = elements.start; item != nullptr && ret == true; item = item->next)
+	{
+		item->data->Update();
+	}
+	return ret;
+}
+
 // Called after all Updates
 bool j1Gui::PostUpdate()
 {
 	bool ret = true;
-
 	p2List_item<j1ElementGUI*>* item;
 	for (item = elements.start; item != nullptr && ret == true; item = item->next)
 	{
 		item->data->Draw();
 	}
-	return true;
+	return ret;
 }
 
 // Called before quitting
@@ -96,11 +112,12 @@ void j1Gui::AddLabel(fPoint pos, p2SString text)
 	elements.add(element);
 }
 
-void j1Gui::AddButton(fPoint pos, p2SString text, SDL_Rect* rect, SDL_Rect* anim) {
-	j1Button* button = new j1Button(pos, text, rect, anim, (SDL_Texture*)GetAtlas());
+void j1Gui::AddButton(fPoint pos, p2SString text, SDL_Rect* rect, SDL_Rect* anim, void(*action)(void)) {
+	j1Button* button = new j1Button(pos, text, rect, anim, action, (SDL_Texture*)GetAtlas());
 
 	j1ElementGUI* element = button;
 	elements.add(element);
 }
+
 // class Gui ---------------------------------------------------
 
