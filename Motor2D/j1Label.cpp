@@ -21,6 +21,5 @@ void j1Label::Draw()
 {
 	fPoint parent_pos = getParentPos(this);
 	App->render->Blit(graphics,parent_pos.x + position.x, parent_pos.y + position.y, nullptr, 0.0f);
-	//LOG("LABEL: %f, %f", parent_pos.x + position.x, parent_pos.y + position.y);
 }
 

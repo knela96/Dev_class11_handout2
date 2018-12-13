@@ -10,7 +10,8 @@ enum class ElementUIType {
 	CHECKBOX,
 	INPUT_TEXT,
 	LABEL,
-	IMAGE
+	IMAGE,
+	SLIDER
 };
 
 // ---------------------------------------------------
